@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import InputField from "../../UI/input/InputField";
-import Button from "../../UI/button/Button";
-import { useAppDispatch } from "../../store/hooks";
-import { setPlayerName } from "../../store/playerSlice";
-import "./styles/player-join.scss";
 import { useParams } from "react-router-dom";
 import { socketIo } from "../../api/socket";
+import { useAppDispatch } from "../../store/hooks";
+import { setPlayerName } from "../../store/playerSlice";
+import InputField from "../../UI/input/InputField";
+import Button from "../../UI/button/Button";
 import ToHome from "../../UI/to-home/ToHome";
+
+import "./styles/player-join.scss";
 
 export default function PlayerJoin() {
   const [name, setName] = useState<string>("");

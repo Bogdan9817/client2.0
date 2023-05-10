@@ -1,6 +1,8 @@
-import { FiChevronLeft } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { FiChevronLeft } from "react-icons/fi";
+
 import "./styles.scss";
+
 export default function ToHome() {
   const navigate = useNavigate();
   return (

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { socketIo } from "../../../api/socket";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { setJudge } from "../../../store/playerSlice";
-import { socketIo } from "../../../api/socket";
 import PlayerSidebarActions from "./PlayerSidebarActions";
 
 export default function PlayerSidebar() {

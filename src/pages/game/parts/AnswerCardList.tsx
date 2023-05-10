@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Card } from "./GameField";
 import { socketIo } from "../../../api/socket";
-import Button from "../../../UI/button/Button";
 import { useAppSelector } from "../../../store/hooks";
+import { Card } from "./GameField";
+import Button from "../../../UI/button/Button";
 
 export default function AnswerCardList() {
   const [answerCards, setAnswerCards] = useState<Card[]>([]);

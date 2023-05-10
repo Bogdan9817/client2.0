@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { socketIo } from "../../api/socket";
+import RadioGroup from "../../UI/radiogroup/RadioGroup";
 import Counter from "../../UI/counter/Counter";
-
-import "./styles/setup.scss";
 import Checker from "../../UI/checker/Checker";
 import Button from "../../UI/button/Button";
-import { useNavigate } from "react-router-dom";
-import RadioGroup from "../../UI/radiogroup/RadioGroup";
-import { socketIo } from "../../api/socket";
+import ToHome from "../../UI/to-home/ToHome";
 
 import data from "./data.json";
-import ToHome from "../../UI/to-home/ToHome";
+
+import "./styles/setup.scss";
 
 export default function Setup() {
   const [playersLimit, setPlayersLimit] = useState<number>(3);

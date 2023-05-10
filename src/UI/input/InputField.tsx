@@ -1,6 +1,6 @@
 import "./styles.scss";
 
-export type InputFieldProps = {
+type InputFieldProps = {
   label: string;
   onChange: (e: { target: { value: string } }) => void;
   value: string;
