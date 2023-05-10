@@ -1,0 +1,24 @@
+@import '../../globals/variables.scss';
+
+.navigate-to-home {
+    width: 140px;
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    font-size: 1.3em;
+    position: relative;
+    cursor: pointer;
+    .home-label {
+        width: 100px;
+        @include prevent-select;
+    }
+    left:-100px;
+    transition: all .9s ease-in;
+    &:hover {
+        left:0;
+        transition: all .9s ease-out;
+        .home-label {
+            opacity: 1;
+        }
+    }
+}

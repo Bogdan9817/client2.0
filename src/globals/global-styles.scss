@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+.hidden {
+    opacity: 0;
+    transition: opacity .9s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transition: opacity .9s ease-in-out;
+}
+
+.bg-gray {
+    background-color: $color-gray;
+}

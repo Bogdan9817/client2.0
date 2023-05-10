@@ -1,0 +1,15 @@
+@import '../../globals/variables.scss';
+
+.checker {
+    @include flex(row, space-between, center);
+    width: 100%;
+    margin: 4px;
+    padding: 8px;
+    &-label {
+        font-weight: bolder;
+        cursor: pointer;
+    }
+    &-state{ 
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../../globals/variables.scss';
+
+.game-wrapper{
+    height: 100vh;
+    @include flex(column, flex-start);
+    @media screen and (min-width:$tablet-min) {
+        @include flex
+    }
+    
+    @import './player-sidebar.scss';
+    @import './game-field.scss';
+}

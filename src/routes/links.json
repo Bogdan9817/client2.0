@@ -1,0 +1,21 @@
+{
+    "main":  {
+        "label":"Основна",
+        "path": "/",
+        "id": "router-link-main"
+    },
+    "game":  {
+        "label":"Гра",
+        "path": "/game",
+        "id":"router-link-game"
+    },
+
+    "admin": {
+        "label":"Адмін сторінка",
+        "path": "/admin",
+        "id":"router-link-admin"
+    }
+}
+   
+    
+   

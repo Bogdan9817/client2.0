@@ -1,0 +1,20 @@
+@import '../../globals/variables.scss';
+
+.input {
+    @include flex(column);
+    width: 100%;
+    margin: 4px auto;
+    &-label {
+        width: 100%;
+        font-weight: bolder;
+        margin-bottom: 4px;
+    }
+
+    &-field {
+        width: 100%;
+        outline: none;
+        padding: 8px;
+        border: 2px solid $colorPrimary700;
+        border-radius: 4px;
+    }
+}

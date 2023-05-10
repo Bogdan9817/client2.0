@@ -1,0 +1,24 @@
+{
+    "heading": "Налаштування гри",
+    "gameTypes": [{
+        "value":"private",
+        "label":"Приватна гра",
+        "id":"game-type-private"
+    },
+    {
+        "value":"public",
+        "label":"Публічна гра",
+        "id":"game-type-public"
+    }],
+    "cardsSettings": [{
+        "label":"18+",
+        "name":"isAdult",
+        "id":"cards-settings-adult-cards"
+    },
+    {
+        "label":"Чорний гумор",
+        "name":"isBlackHumor",
+        "id":"cards-settings-black-humor"
+    }]
+
+}

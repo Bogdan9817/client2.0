@@ -1,0 +1,29 @@
+@import "../../globals/variables.scss";
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 4px auto;
+    text-align: center;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+    @include prevent-select;
+    
+    &.primary {
+        background-color: $colorPrimary200;
+        color: white;
+        border-color: $colorPrimary700;
+        transition: background-color .5s ease-in-out;
+        &:hover {
+            background:$colorPrimary700;
+            transition: background-color .5s ease-in-out;
+        }
+    }
+
+    &.secondary {
+
+    }
+}

@@ -1,0 +1,18 @@
+.sidebar-actions {
+    margin: 1em 0;
+
+    .copy-link {
+        padding: .5em 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 2px 2px 2px rgba(0,0,0,0.5);
+        border-radius: 4px;
+        cursor: pointer;
+        @include prevent-select;
+        
+        &:hover {
+            box-shadow: inset 0 2px 2px 3px rgba(0,0,0,0.7);
+        }
+    }
+}

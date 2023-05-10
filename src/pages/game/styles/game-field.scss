@@ -1,0 +1,61 @@
+.game-field {
+    width: 100%;
+    margin-top: 3em;
+    padding: 12px;
+    @include flex(column, space-between);
+
+    .question-card-sector {
+        width: 100%;
+        padding: 12px;
+        
+        .question-card {
+            width: 100%;
+            min-height: 150px;
+            height: auto;
+            margin: 12px auto;
+            padding: 12px;
+            box-shadow: 0 4px 9px rgba(0, 0, 0, 0.5);
+            @include flex
+        }
+    }
+
+    .answer-cards-sector {
+        @include flex(column);
+
+        .card {
+            height: 150px;
+            width: 100%;
+            margin: 30px auto;
+            padding: 12px;
+            box-shadow: 0 4px 9px rgba(0, 0, 0, 0.5);
+            @include flex(column, center);
+
+            .card-text {
+                margin-bottom: 1em;
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
+    }
+
+    @media  screen and (min-width:$tablet-min) {
+        margin-top: 0;
+
+        .answer-cards-sector {
+            width: 100%;
+            @include flex(row, space-between);
+            flex-wrap:wrap;
+
+            .card {
+                width: 30%;
+                box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.5);
+                transition: box-shadow .3s ease-in-out;
+
+                &:hover {
+                    box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8);
+                    transition: box-shadow .3s ease-in-out;
+                }
+            }
+        }
+    }
+}

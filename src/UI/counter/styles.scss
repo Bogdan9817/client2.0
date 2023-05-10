@@ -1,0 +1,44 @@
+@import '../../globals/variables.scss';
+
+.counter-container {
+    @include flex(row, space-between, center);
+    width: 100%;
+    padding: 8px;
+}
+
+.counter {
+    @include flex;
+    @include prevent-select;
+    border: 2px solid $colorPrimary700;
+    border-radius: 2px;
+    
+    >span {
+        @include flex(column);
+        height: 24px;
+        width: 24px;
+        text-align: center;
+    }
+    &-label {
+        @include prevent-select;
+    }
+
+    &-value {
+        font-size: 18px;
+        border-left: 2px solid $colorPrimary700;
+        border-right: 2px solid $colorPrimary700;
+    }
+
+    &-btn{
+        cursor: pointer;
+        color: $colorPrimary700;
+        &.pressed:not(.disabled) {
+            background-color: $colorPrimary700;
+            color: #fff;
+        }
+
+        &.disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+}

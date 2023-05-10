@@ -1,0 +1,22 @@
+@import "../variables/breakpoints.scss";
+@import "../variables/colors.scss";
+
+@mixin form(){
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width:$tablet-min) {
+        min-width: 320px;
+        width: auto;
+        margin: 2em auto;
+        padding: 2em;
+        max-width: 90%;
+        border: 2px solid $colorPrimary700;
+        border-radius: 12px;
+    }
+}
