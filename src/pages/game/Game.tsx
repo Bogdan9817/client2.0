@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { socketIo } from "../../api/socket";
@@ -5,10 +6,18 @@ import withPlayerJoin from "../../hocs/player-join/withPlayerJoin";
 import withSetup from "../../hocs/setup/withSetup";
 import PlayerSidebar from "./parts/PlayerSidebar";
 import GameField from "./parts/GameField";
-
+import GameOver from "./parts/GameOver";
 import "./styles/styles.scss";
 
+export interface PlayerInfo {
+  name: string;
+  playerId: string;
+  result: number;
+}
+
 function Game() {
+  const [over, setOver] = useState<boolean>(false);
+  const [results, setResults] = useState<PlayerInfo[]>([]);
   const navigate = useNavigate();
   socketIo.on("socket_alert", (data: string) => {
     toast(data, {
@@ -27,10 +36,15 @@ function Game() {
     });
   });
 
+  socketIo.on("game_over", (data: any[]) => {
+    setOver(true);
+    setResults(data);
+  });
+
   return (
     <div className='game-wrapper'>
       <PlayerSidebar />
-      <GameField />
+      {over ? <GameOver info={results} /> : <GameField />}
     </div>
   );
 }
