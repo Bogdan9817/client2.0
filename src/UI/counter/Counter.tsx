@@ -14,13 +14,13 @@ export default function Counter({ min, max, onChange, label }: CounterProps) {
   const increment = () => {
     if (value === max) return;
     setValue(value + 1);
-    onChange(value);
+    onChange(value + 1);
   };
 
   const decrement = () => {
     if (value === min) return;
     setValue(value - 1);
-    onChange(value);
+    onChange(value - 1);
   };
 
   const mouseDown = (e: any) => {
