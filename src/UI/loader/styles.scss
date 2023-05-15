@@ -1,0 +1,16 @@
+.loader {
+    margin: 10px auto;
+    font-size: 2em;
+    font-weight: 500;
+    animation: loader ease-in-out 1s infinite;
+}
+
+@keyframes loader {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+
+}

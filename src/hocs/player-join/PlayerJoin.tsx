@@ -22,6 +22,7 @@ export default function PlayerJoin() {
 
   const submitPlayerName = () => {
     dispatch(setPlayerName(name));
+    !socketIo.connected && socketIo.connect();
     if (roomId) {
       socketIo.emit("join_room", { roomId, name });
     }

@@ -34,6 +34,7 @@ export default function Setup() {
       sessionType,
       sessionCardsOpts,
     };
+    socketIo.connect();
     socketIo.emit("create_room", gameSettings);
     socketIo.on("get_roomId", (roomId: string) => {
       navigate(`${roomId}`);

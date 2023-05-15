@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { socketIo } from "../../api/socket";
@@ -19,27 +19,28 @@ function Game() {
   const [over, setOver] = useState<boolean>(false);
   const [results, setResults] = useState<PlayerInfo[]>([]);
   const navigate = useNavigate();
-  socketIo.on("socket_alert", (data: string) => {
-    toast(data, {
-      type: "error",
-      autoClose: 1000,
-    });
-    setTimeout(() => {
-      navigate("/");
-    });
-  });
 
-  socketIo.on("game_alert", (data: string) => {
-    toast(data, {
-      type: "warning",
-      autoClose: 1000,
+  useEffect(() => {
+    socketIo.on("socket_alert", (data: string) => {
+      toast(data, {
+        type: "error",
+        autoClose: 1000,
+      });
+      setTimeout(() => {
+        navigate("/");
+      });
     });
-  });
-
-  socketIo.on("game_over", (data: any[]) => {
-    setOver(true);
-    setResults(data);
-  });
+    socketIo.on("game_alert", (data: string) => {
+      toast(data, {
+        type: "warning",
+        autoClose: 1000,
+      });
+    });
+    socketIo.on("game_over", (data: any[]) => {
+      setOver(true);
+      setResults(data);
+    });
+  }, [navigate]);
 
   return (
     <div className='game-wrapper'>

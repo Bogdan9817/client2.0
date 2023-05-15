@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { socketIo } from "../../../api/socket";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
@@ -11,23 +11,26 @@ export default function PlayerSidebar() {
   const [isGameStart, setIsGameStart] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const judge = useAppSelector((state) => state.player.judge);
-  socketIo.on("player_joined", (data) => {
-    setPlayers(data);
-  });
 
-  socketIo.on("player_updates_ready_state", (data) => {
-    setPlayers(data);
-  });
+  useEffect(() => {
+    socketIo.on("player_joined", (data) => {
+      setPlayers(data);
+    });
 
-  socketIo.on(
-    "players_update",
-    ({ players, currentJudge, currentQuestion }) => {
+    socketIo.on("player_updates_ready_state", (data) => {
+      console.log(data);
+      setPlayers(data);
+    });
+
+    socketIo.on("players_update", (players) => {
       setPlayers(players);
-      dispatch(setJudge(players[currentJudge].name));
-      setJudge(currentJudge);
-      setIsGameStart(!!currentQuestion);
-    }
-  );
+    });
+
+    socketIo.on("current_judge", (currentJudge) => {
+      dispatch(setJudge(currentJudge));
+      setIsGameStart(true);
+    });
+  }, []);
 
   const trigger = () => {
     setClosed((prev) => !prev);

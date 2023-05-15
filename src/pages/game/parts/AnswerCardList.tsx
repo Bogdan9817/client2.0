@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { socketIo } from "../../../api/socket";
 import { useAppSelector } from "../../../store/hooks";
 import { Card } from "./GameField";
@@ -9,16 +9,19 @@ export default function AnswerCardList() {
   const [isPlayerChooseCard, setIsPlayerChooseCard] = useState<boolean>(true);
   const [isAlreadyChoose, setIsAlreadChoose] = useState<boolean>(false);
   const { playerName, judge } = useAppSelector((state) => state.player);
-  socketIo.on("answer_cards_update", (data: Card[]) => {
-    setAnswerCards(data);
-    setIsPlayerChooseCard(true);
-    setIsAlreadChoose(false);
-  });
+  
+  useEffect(() => {
+    socketIo.on("answer_cards_update", (data: Card[]) => {
+      setAnswerCards(data);
+      setIsPlayerChooseCard(true);
+      setIsAlreadChoose(false);
+    });
 
-  socketIo.on("round_answers", (data) => {
-    setAnswerCards(data);
-    setIsPlayerChooseCard(false);
-  });
+    socketIo.on("round_answers", (data) => {
+      setAnswerCards(data);
+      setIsPlayerChooseCard(false);
+    });
+  }, []);
 
   const handlePlayerChoose = (card: Card) => {
     socketIo.emit("player_choose_answer", card);

@@ -1,7 +1,7 @@
 @import '../../globals/variables.scss';
 
 .navigate-to-home {
-    width: 140px;
+    width: 180px;
     display: flex;
     justify-content: row;
     align-items: center;
@@ -9,10 +9,10 @@
     position: relative;
     cursor: pointer;
     .home-label {
-        width: 100px;
+        width: 140px;
         @include prevent-select;
     }
-    left:-100px;
+    left:-140px;
     transition: all .9s ease-in;
     &:hover {
         left:0;
