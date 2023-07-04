@@ -1,0 +1,64 @@
+.sidebar {
+    background-color: $color-dark-green;
+    color:$color-white;
+}
+.sidebar-body {
+    z-index: 2;
+    background-color: $color-dark-green;
+    @include flex(column, flex-start);
+
+    .logout-btn {
+        position: relative;
+        top:75vh;
+        @include flex;
+        color: $color-white;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
+        &:hover {
+            opacity: .7;
+            transition:  opacity .5s ease-in-out;
+        }
+    }
+
+    .nav-tab {
+        &>ul {
+            @include flex(column, center, center);
+            list-style-type: none;
+            padding-left: 0;
+            &>li:first-child {
+                margin-left: 0;
+            }
+            &>li {
+                padding-bottom: 4px;
+                border-bottom: 2px solid $color-white;
+                box-shadow: 0 0 0 rgba(0,0,0,0);
+                transition: box-shadow .5s ease-in-out;
+                width: 100%;
+                &.active {
+                    opacity: .5;
+                    &>a{
+                        cursor: default;
+                    }
+                }
+                
+                &>a {
+                    text-decoration: none;
+                    color:$color-white;
+                    text-shadow: 0 0 0 rgba(0,0,0,0);
+                    transition: text-shadow .5s ease-in-out;
+                }
+
+                &:not(.active):hover {
+                    box-shadow: 0 3px 0 rgba(0,0,0,.8);
+                    transition: box-shadow .5s ease-in-out;
+                    &>a {
+                        text-shadow: 2px 2px 4px rgba(0,0,0,.8);
+                        transition: text-shadow .5s ease-in-out;
+                    }
+                     
+                }
+            }
+        }
+    }
+}

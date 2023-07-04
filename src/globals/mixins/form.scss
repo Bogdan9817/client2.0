@@ -9,14 +9,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.5);
 
     @media screen and (min-width:$tablet-min) {
         min-width: 320px;
         width: auto;
-        margin: 2em auto;
+        margin: 0 auto;
         padding: 2em;
         max-width: 90%;
-        border: 2px solid $colorPrimary700;
+        border: 2px solid black;
         border-radius: 12px;
     }
 }

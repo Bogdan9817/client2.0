@@ -32,23 +32,30 @@ export default function Counter({ min, max, onChange, label }: CounterProps) {
   };
 
   return (
-    <div className='counter-container'>
-      <span className='counter-label'>{label}</span>
+    <div aria-label={label} className='counter-container'>
+      <span className='counter-label fs-sm'>{label}</span>
       <div className='counter'>
         <span
           className={`counter-btn ${value === min ? "disabled" : ""}`}
           onClick={decrement}
           onMouseDown={mouseDown}
           onMouseUp={mouseUp}
+          aria-label='decrement button'
         >
           -
         </span>
-        <span className='counter-value'>{value}</span>
+        <span
+          className='counter-value'
+          aria-label={`${label} value is ${value}`}
+        >
+          {value}
+        </span>
         <span
           className={`counter-btn ${value === max ? "disabled" : ""}`}
           onClick={increment}
           onMouseDown={mouseDown}
           onMouseUp={mouseUp}
+          aria-label='increment button'
         >
           +
         </span>

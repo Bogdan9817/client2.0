@@ -1,0 +1,27 @@
+
+
+.astronaut {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: auto;
+    height: auto;
+    animation: levitate 3s infinite linear;
+    rotate: 90deg;
+}
+
+
+@keyframes levitate{
+    0% {
+        top: 20px;
+    }
+
+    50% {
+        top:0;
+    }
+
+    100% {
+        top:20px;
+    }
+
+}

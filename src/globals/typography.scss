@@ -1,26 +1,27 @@
+@import './variables.scss';
 * {
     font-family: 'Montserrat', sans-serif
 }
 
 .fs{
     &-xs {
-        font-size: .75em;
+        font-size: 12px;
     }
 
     &-sm {
-        font-size: 1em
+        font-size: 14px
     }
 
     &-md {
-        font-size: 1.25em;
+        font-size: 18px;
     }
 
     &-lg {
-        font-size: 1.5em;
+        font-size: 24px;
     }
 
     &-xl {
-        font-size: 2em;
+        font-size: 36px;
     }
 }
 
@@ -39,5 +40,72 @@
     }
     &-600 {
         font-weight: 600;
+    }
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5,h6 {
+    font-size: 12px;
+}
+
+
+
+
+@media screen and (min-width:$tablet-min) {
+    h1 {
+        font-size: 64px;
+    }
+    
+    h2 {
+        font-size: 48px;
+    }
+    
+    h3 {
+        font-size: 36px;
+    }
+    
+    h4 {
+        font-size: 24px;
+    }
+    
+    h5,h6 {
+        font-size: 12px;
+    }
+
+    .fs{
+        &-xs {
+            font-size: 12px;
+        }
+    
+        &-sm {
+            font-size: 24px
+        }
+    
+        &-md {
+            font-size: 36px;
+        }
+    
+        &-lg {
+            font-size: 48px;
+        }
+    
+        &-xl {
+            font-size: 64px;
+        }
     }
 }

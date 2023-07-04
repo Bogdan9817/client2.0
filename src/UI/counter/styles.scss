@@ -9,7 +9,7 @@
 .counter {
     @include flex;
     @include prevent-select;
-    border: 2px solid $colorPrimary700;
+    border: 2px solid $color-white;
     border-radius: 2px;
     
     >span {
@@ -23,17 +23,16 @@
     }
 
     &-value {
-        font-size: 18px;
-        border-left: 2px solid $colorPrimary700;
-        border-right: 2px solid $colorPrimary700;
+        border-left: 2px solid $color-white;
+        border-right: 2px solid $color-white;
     }
 
     &-btn{
         cursor: pointer;
-        color: $colorPrimary700;
+        color: $color-white;
         &.pressed:not(.disabled) {
-            background-color: $colorPrimary700;
-            color: #fff;
+            background-color: $color-white;
+            color: black;
         }
 
         &.disabled {

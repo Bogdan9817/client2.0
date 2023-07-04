@@ -2,8 +2,14 @@
 @import './globals/global-styles.scss';
 @import './globals/variables.scss';
 
+html, body, #root, .main {
+  min-height: 100vh;
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
+  z-index: 1;
 }
 
 body {
@@ -14,5 +20,11 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
   @include prevent-select;
+}
+
+.error {
+  font-size: 36px;
+  font-weight: bolder;
+  color: $color-red;
 }
 

@@ -12,7 +12,7 @@ export default function ToHome() {
       }}
       className='navigate-to-home'
     >
-      <span className='home-label hidden'>to home</span>
+      <span className='home-label hidden fs-md'>to home</span>
       <FiChevronLeft className='home-icon' size={36} />
     </div>
   );

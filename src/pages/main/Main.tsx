@@ -18,13 +18,23 @@ export default function Main() {
 
   return (
     <div className='main-wrapper'>
-      <h1>Картковий бій</h1>
-      <Button
-        title='Гра'
-        onClick={() => {
-          navigate(links.game.path);
-        }}
-      />
+      <div className='header'>
+        <h1>Картковий бій</h1>
+      </div>
+      <div className='menu-btns'>
+        <Button
+          title='Гра'
+          onClick={() => {
+            navigate(links.game.path);
+          }}
+        />
+        <Button
+          title='Адмін'
+          onClick={() => {
+            navigate(links.admin.path);
+          }}
+        />
+      </div>
     </div>
   );
 }

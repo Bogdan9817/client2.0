@@ -1,0 +1,9 @@
+@import '../../../globals/variables.scss';
+
+.animated-bg {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(#0F2027 85%,#203A43, #2C5364);
+    @import './astronaut.scss';
+}

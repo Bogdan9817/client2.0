@@ -1,0 +1,43 @@
+@import '../../globals/variables.scss';
+
+.form {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    @include flex(column);
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+    background-color: $color-dark-green;
+    color: $color-white;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+    &.show {
+        opacity: 1;
+        transition: all .4s ease-in-out;
+    }
+    &>input[type="submit"]{
+        display: none;
+    }
+
+    .back {
+        align-self: flex-end;
+        transition: stroke-width .1s ease-out;
+
+        &:hover {
+            stroke-width: 3px;
+            transition: stroke-width .3s ease-in;
+        }
+    }
+
+    @media screen and (min-width:$tablet-min) {
+        min-width: 320px;
+        width: auto;
+        margin: 0 auto;
+        padding: 2em;
+        max-width: 90%;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+}

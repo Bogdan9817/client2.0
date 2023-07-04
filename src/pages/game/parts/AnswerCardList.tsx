@@ -9,9 +9,10 @@ export default function AnswerCardList() {
   const [isPlayerChooseCard, setIsPlayerChooseCard] = useState<boolean>(true);
   const [isAlreadyChoose, setIsAlreadChoose] = useState<boolean>(false);
   const { playerName, judge } = useAppSelector((state) => state.player);
-  
+
   useEffect(() => {
-    socketIo.on("answer_cards_update", (data: Card[]) => {
+    socketIo.on("update_cards", (data: Card[]) => {
+      console.log(data);
       setAnswerCards(data);
       setIsPlayerChooseCard(true);
       setIsAlreadChoose(false);
@@ -24,12 +25,12 @@ export default function AnswerCardList() {
   }, []);
 
   const handlePlayerChoose = (card: Card) => {
-    socketIo.emit("player_choose_answer", card);
+    socketIo.emit("player_choose_answer", [card.id]);
     setIsAlreadChoose(true);
   };
 
-  const handleJudgeChoose = (card: Card & { author: string }) => {
-    socketIo.emit("judge_choose_answer", card.author);
+  const handleJudgeChoose = (card: Card) => {
+    socketIo.emit("judge_choose_answer", card.id);
   };
 
   return (

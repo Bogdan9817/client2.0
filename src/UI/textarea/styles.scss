@@ -1,0 +1,10 @@
+@import '../../globals/variables.scss';
+
+.textarea {
+    width: 100%;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1;
+}

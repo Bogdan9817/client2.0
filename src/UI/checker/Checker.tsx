@@ -16,8 +16,13 @@ export default function Checker({ label, name, onClick }: CheckerProps) {
     onClick(name, !checked);
   };
   return (
-    <div onClick={handleClick} className='checker'>
-      <label className='checker-label'>{label}:</label>
+    <div
+      aria-label={name}
+      role='checkbox'
+      onClick={handleClick}
+      className='checker'
+    >
+      <label className='checker-label fw-400 fs-sm'>{label}:</label>
       <span className='checker-state'>
         {checked ? <FiCheck size={24} /> : <FiX size={24} />}
       </span>

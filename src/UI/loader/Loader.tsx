@@ -9,5 +9,9 @@ export default function Loader() {
 
     setLoaderLabel(data.loaderLabels[label]);
   }, []);
-  return <div className='loader'>{loaderLabel}</div>;
+  return (
+    <div aria-label='loading' className='loader fs-md fw-500'>
+      {loaderLabel}
+    </div>
+  );
 }

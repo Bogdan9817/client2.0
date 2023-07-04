@@ -1,13 +1,8 @@
 @import '../../../globals/variables.scss';
 @import './sidebar-actions.scss';
 
-.player-sidebar {
-    position: fixed;
-    padding: 12px;
-    background-color: #E6E6E6;
-    height: 100vh;
-    width: 100%;
-    transition: height .9s ease-in-out;
+.sidebar {
+    color:$color-white;
 
     .sidebar-playerlist {
         font-size: 1em;
@@ -17,79 +12,14 @@
         &-player{
             text-align: end;
             line-height: 1.5em;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid $color-white;
         }
     }
 
     .sidebar-body {
-        padding: 12px 0;
-        width: 100%;
-        position: relative;
-        top:0;
-        opacity: 1;
-        transition: all .9s ease-in-out;
         @import './sidebar-actions.scss';
     }
     
-    .trigger-btn {
-        @include flex(row, flex-end);
-        >div{
-            display: block;
-            height: 36px;
-            width: 36px;
-            rotate: 90deg;
-            transition: rotate .9s ease-in-out;
-        }
-    }
 
-    &.closed {
-        height: 60px;
-        transition: height .9s ease-in-out;
-
-        .sidebar-body {
-            top: -500px;
-            opacity: 0;
-            transition: all .9s ease-in-out;
-        }
-
-        .trigger-btn {
-            >div {
-                rotate: 180deg;
-                transition: rotate .9s ease-in-out;
-            }
-
-        }
-    }
 }
 
-@media screen and (min-width: $tablet-min){
-    @include flex(row, space-between);
-
-    .player-sidebar {
-        position: relative;
-        width: 200px;
-        box-shadow: 4px 0px 9px rgba(0, 0, 0, 0.5);
-        transition:all .9s ease-in-out;
-        
-        .sidebar-body {
-            left:0;
-            opacity: 1;
-            transition: all .9s ease-in-out;
-        }
-
-        &.closed {
-            height: 100%;
-            box-shadow: none;
-            width: 60px;
-            transition: all .9s ease-in-out;
-
-            .sidebar-body {
-                position: relative;
-                top:0;
-                left: -100px;
-                opacity: 0;
-                transition: all .9s ease-in-out;
-            }
-        }
-    }
-}

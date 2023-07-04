@@ -21,7 +21,7 @@ function Game() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    socketIo.on("socket_alert", (data: string) => {
+    socketIo.on("room_alert", (data: string) => {
       toast(data, {
         type: "error",
         autoClose: 1000,

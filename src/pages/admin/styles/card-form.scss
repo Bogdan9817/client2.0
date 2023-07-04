@@ -1,0 +1,18 @@
+.card-form {
+    @include flex;
+    gap:12px;
+    width: 100%;
+    margin-top: 24px;
+    background-color: rgba(0,0,0,0);
+    backdrop-filter: blur(20px);
+    align-self: flex-start;
+    position: sticky;
+    z-index: 10;
+    top: 60px;
+    @media screen and (min-width: $tablet-min) {
+        top:0
+    }
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top:none;
+}

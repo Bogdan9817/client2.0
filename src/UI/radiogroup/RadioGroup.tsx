@@ -22,7 +22,7 @@ export default function RadioGroup({ values, onChange }: RadioGroupProps) {
   };
 
   return (
-    <div className='radiogroup'>
+    <div aria-label='radio-group' className='radiogroup'>
       {values.map((val: RadioGroupValue) => {
         return (
           <div
@@ -32,7 +32,9 @@ export default function RadioGroup({ values, onChange }: RadioGroupProps) {
             }}
             key={val.id}
           >
-            <label>{val.label}</label>
+            <label htmlFor={val.id} className='fs-sm fw-500'>
+              {val.label}
+            </label>
             <span id={val.id}>
               {value?.id === val.id ? (
                 <FiTarget size={24} />

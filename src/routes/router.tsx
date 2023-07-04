@@ -3,6 +3,7 @@ import Main from "../pages/main/Main";
 import Admin from "../pages/admin/Admin";
 import Game from "../pages/game/Game";
 import Error from "../pages/error/Error";
+import CardList from "../pages/admin/parts/CardList";
 
 export type LinkType = {
   label: string;
@@ -20,6 +21,12 @@ export const router = createBrowserRouter([
     path: "/admin",
     errorElement: <Error />,
     element: <Admin />,
+    children: [
+      {
+        path: "/admin/cardlist",
+        element: <CardList />,
+      },
+    ],
   },
   {
     path: "/game",

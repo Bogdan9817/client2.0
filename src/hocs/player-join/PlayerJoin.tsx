@@ -8,10 +8,10 @@ import Button from "../../UI/button/Button";
 import ToHome from "../../UI/to-home/ToHome";
 
 import "./styles/player-join.scss";
+import Form from "../../UI/form/Form";
 
 export default function PlayerJoin() {
   const [name, setName] = useState<string>("");
-  const [show, setShow] = useState<boolean>(false);
   const { roomId } = useParams();
 
   const dispatch = useAppDispatch();
@@ -28,22 +28,15 @@ export default function PlayerJoin() {
     }
   };
 
-  useEffect(() => {
-    setShow(true);
-  }, []);
-
   return (
-    <>
-      <ToHome />
-      <div className={`player-join hidden ${show ? "show" : ""}`}>
-        <InputField
-          label="Введіть ім'я"
-          value={name}
-          onChange={handleChange}
-          id='playerName'
-        />
-        <Button onClick={submitPlayerName} title="Підтвердити ім'я" />
-      </div>
-    </>
+    <Form submit={submitPlayerName} withClose>
+      <InputField
+        label="Введіть ім'я"
+        value={name}
+        onChange={handleChange}
+        id='playerName'
+      />
+      <Button onClick={submitPlayerName} title="Підтвердити ім'я" />
+    </Form>
   );
 }
