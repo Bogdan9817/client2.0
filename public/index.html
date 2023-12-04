@@ -30,7 +30,6 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
-  <script>navigator.serviceWorker.register("service-worker.js")</script> 
     <title>Cardgame battle</title>
   </head>
   <body>
@@ -46,5 +45,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      if('serviceWorker' in navigator){
+        console.log('Service worker', navigator)
+        navigator.serviceWorker.register('/sw.js', {scope:'/'}).then(
+          function(registration){
+            console.log('Service worker registered')
+          }
+        )
+        navigator.serviceWorker.ready.then(function(registration){
+          console.log('Service worker ready')
+        })
+      }
+    </script>
   </body>
 </html>
